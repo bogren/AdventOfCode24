@@ -1,4 +1,5 @@
 import Foundation
+import Algorithms
 import ArgumentParser
 
 struct Day2: ParsableCommand {
@@ -34,9 +35,9 @@ struct Day2: ParsableCommand {
   }
 
   private func isSafe(_ numbers: [Int]) -> Bool {
-    let pairs = zip(numbers, numbers.dropFirst())
-    return pairs.allSatisfy { (first, second) in (1...3).contains(first - second)}
-    || pairs.allSatisfy { (first, second) in (1...3).contains(second - first)}
+    let pairs = numbers.adjacentPairs()
+    return pairs.allSatisfy { (1...3) ~= ($0 - $1)}
+    || pairs.allSatisfy { (1...3) ~= ($1 - $0)}
   }
 }
 

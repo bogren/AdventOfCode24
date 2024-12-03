@@ -4,17 +4,22 @@ import PackageDescription
 let packageDependencies: [Package.Dependency] = [
   .package(
     url: "https://github.com/apple/swift-collections.git",
-    exact: "1.0.4"
+    exact: "1.1.4"
   ),
   .package(
     url: "https://github.com/apple/swift-argument-parser.git",
-    exact: "1.2.3"
+    exact: "1.5.0"
+  ),
+  .package(
+    url: "https://github.com/apple/swift-algorithms",
+    from: "1.2.0"
   )
 ]
 
 let targetDependencies: [Target.Dependency] = [
   .product(name: "Collections", package: "swift-collections"),
-  .product(name: "ArgumentParser", package: "swift-argument-parser")
+  .product(name: "ArgumentParser", package: "swift-argument-parser"),
+  .product(name: "Algorithms", package: "swift-algorithms")
 ]
 
 let package = Package(

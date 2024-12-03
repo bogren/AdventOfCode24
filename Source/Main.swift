@@ -7,7 +7,8 @@ struct AdventOfCode: ParsableCommand {
 
   private static let days: [ParsableCommand.Type] = [
     Day1.self,
-    Day2.self
+    Day2.self,
+    Day3.self
   ]
 
   static let configuration = CommandConfiguration(
