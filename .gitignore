@@ -1,4 +1,7 @@
+.DS_Store
 .build
 .swiftpm
 
-Source/Input/
+Package.resolved
+
+Source/Input/Day*
