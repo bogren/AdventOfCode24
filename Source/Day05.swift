@@ -2,7 +2,7 @@ import Foundation
 import ArgumentParser
 
 extension Array {
-  func tuple() -> (Element,Element) {
+  func tuple() -> (Element, Element) {
     return (self[0], self[1])
   }
 }
