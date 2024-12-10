@@ -18,7 +18,7 @@ struct Day10: ParsableCommand {
     for i in 0..<grid.count {
       for j in 0..<grid[i].count {
         if grid[i][j] == 0 {
-          startingPositions.insert(Tuple(j, i))
+          startingPositions.insert(Tuple(i, j))
         }
       }
     }
@@ -37,13 +37,13 @@ struct Day10: ParsableCommand {
     while let current = deque.popFirst() {
       if paths.contains(current) { continue }
       paths.insert(current)
-      if grid[current.y][current.x] == 9 {
+      if grid[current.x][current.y] == 9 {
         count += 1
       }
       for dir in [Tuple(0, 1), Tuple(0, -1), Tuple(1, 0), Tuple(-1, 0)] {
         let next = current + dir
-        guard let neighbor = grid[safe: next.y]?[safe: next.x], // I should fix this
-              grid[current.y][current.x] + 1 == neighbor else { continue }
+        guard let neighbor = grid[safe: next.x]?[safe: next.y], // I should fix this
+              grid[current.x][current.y] + 1 == neighbor else { continue }
         deque.append(next)
       }
     }
