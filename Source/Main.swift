@@ -14,6 +14,7 @@ struct AdventOfCode: ParsableCommand {
     Day6.self,
     Day7.self,
     Day10.self,
+    Day11.self,
     Day13.self
   ]
 
