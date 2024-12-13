@@ -10,9 +10,19 @@ struct Tuple: Hashable {
   }
 }
 
+extension Tuple: Equatable {
+  static func == (lhs: Tuple, rhs: Tuple) -> Bool {
+    lhs.x == rhs.x && lhs.y == rhs.y
+  }
+}
+
 extension Tuple {
   static func +(first: Tuple, second: Tuple) -> Tuple {
     return Tuple(first.x + second.x, first.y + second.y)
+  }
+
+  static func *(factor: Int, tuple: Tuple) -> Tuple {
+    return Tuple(factor * tuple.x, factor * tuple.y)
   }
 
   func rotate() -> Tuple {
