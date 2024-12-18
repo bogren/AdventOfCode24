@@ -15,7 +15,9 @@ struct AdventOfCode: ParsableCommand {
     Day7.self,
     Day10.self,
     Day11.self,
-    Day13.self
+    Day13.self,
+    Day14.self,
+    Day18.self
   ]
 
   static let configuration = CommandConfiguration(

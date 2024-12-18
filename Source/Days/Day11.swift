@@ -1,6 +1,5 @@
 import Foundation
 import ArgumentParser
-import Collections
 
 struct Day11: ParsableCommand {
   private var fileURL = Bundle.module.url(
@@ -19,14 +18,14 @@ struct Day11: ParsableCommand {
     var stones: [Int: Int] = Dictionary(uniqueKeysWithValues: input)
 
     for i in 1...75 {
-      stones = solve(stones: stones)
+      stones = solve(stones)
       if i == 25 { print(stones.values.reduce(0, +)) }
     }
     print(stones.values.reduce(0, +))
   }
 
   // Perform one blink
-  private func solve(stones: [Int: Int]) -> [Int: Int] {
+  private func solve(_ stones: [Int: Int]) -> [Int: Int] {
     var new: [Int: Int] = [:]
     for (stone, count) in stones {
       if stone == 0 {

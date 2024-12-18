@@ -8,6 +8,18 @@ struct Tuple: Hashable {
     self.x = x
     self.y = y
   }
+
+  init?(_ x: String, _ y: String) {
+    guard let x = Int(x), let y = Int(y) else { return nil }
+    self.x = x
+    self.y = y
+  }
+
+  init?(_ x: Substring, _ y: Substring) {
+    guard let x = Int(x), let y = Int(y) else { return nil }
+    self.x = x
+    self.y = y
+  }
 }
 
 extension Tuple: Equatable {
@@ -33,5 +45,11 @@ extension Tuple {
     case Tuple(-1, 0): Tuple(0, -1)
     default: fatalError()
     }
+  }
+}
+
+extension Tuple: CustomStringConvertible {
+  var description: String {
+    "(\(x), \(y))"
   }
 }
