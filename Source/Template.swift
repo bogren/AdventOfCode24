@@ -12,5 +12,6 @@ struct DayXX: ParsableCommand {
   mutating func run() throws {
     let input = try String(contentsOf: fileURL, encoding: .utf8)
       .split(separator: "\n")
+    print(input)
   }
 }
